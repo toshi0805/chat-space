@@ -21,7 +21,6 @@ belongs_to :user
 
 ## groupsテーブル
 |Column|Type|Options|
-|------|----|null: false|
 |name|string|null: false|
 ### Association
 - has_many :groups_users
