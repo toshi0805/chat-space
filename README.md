@@ -3,7 +3,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
-|user|references|null: false, foreign_key: true|
+|grpup|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :group
 - belongs_to :user
@@ -21,7 +21,7 @@ belongs_to :user
 
 ## groupsテーブル
 |Column|Type|Options|
-|------|----|-------|
+|------|----|null: false|
 |name|string|
 ### Association
 - has_many :groups_users
