@@ -3,8 +3,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 
 ### Association
 
@@ -37,10 +37,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-
+|email|string|          |
+|password|string|       |
 ### Association
 - has_many :groups_users
-- has_many :groups_users,through: :users
+- has_many :groups,through: :groups_users
 
 - has_many :messages_user
 - has_many :groups_user,through: :messages
