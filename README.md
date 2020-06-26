@@ -3,7 +3,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
@@ -16,29 +16,31 @@
 |------|----|-------|
 |body|text|   |
 |image|string|    |
-|group_id|integer|    |
-|user_id|integer|    |
+|group_id|references|null: false, foreign_key: true |
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
-- 
-- 
+- has_many :messages_users
+- has_many users:,through: :messages_users
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|
+|name|string|
 ### Association
-- has_many :groups_users_
+- has_many :groups_users
 - has_many :users,through: :groups_users
 
+- has_many :messages_user
+- has_many :users,through: :messages
 
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|      |
-|name|string|     |
+|name|string|null: false|
 
 ### Association
-- has_many :groups_users_
+- has_many :groups_users
 - has_many :groups_users,through: :users
 
-
+- has_many :messages_user
+- has_many :groups_user,through: :messages
