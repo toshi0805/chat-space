@@ -1,13 +1,10 @@
 # README
 ## groups_usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |user|references|null: false, foreign_key: true|
-
 ### Association
-
 - belongs_to :group
 - belongs_to :user
 
@@ -18,10 +15,10 @@
 |image||references|
 |group|references|null: false, foreign_key: true |
 |user|references|null: false, foreign_key: true|
-
 ### Association
 belongs_to :group
 belongs_to :user
+
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -29,7 +26,7 @@ belongs_to :user
 ### Association
 - has_many :groups_users
 - has_many :users,through: :groups_users
-
+- has_many :messages
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -39,5 +36,4 @@ belongs_to :user
 ### Association
 - has_many :groups_users
 - has_many :groups,through: :groups_users
-- has_many :messages_user
-- has_many :users,through: :messages
+- has_many :messages
