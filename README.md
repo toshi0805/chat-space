@@ -22,6 +22,7 @@
 ### Association
 - 
 - 
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |group_name|string|
