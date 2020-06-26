@@ -7,6 +7,7 @@
 |group_id|integer|null: false, foreign_key: true|
 
 ### Association
+
 - belongs_to :group
 - belongs_to :user
 
@@ -21,3 +22,22 @@
 ### Association
 - 
 - 
+|Column|Type|Options|
+|------|----|-------|
+|group_name|string|
+### Association
+- has_many :groups_users_
+- has_many :users,through: :groups_users
+
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|      |
+|name|string|     |
+
+### Association
+- has_many :groups_users_
+- has_many :groups_users,through: :users
+
+
