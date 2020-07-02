@@ -1,0 +1,25 @@
+.sidebar
+  .sidebar__header
+    .header__name 
+      .left__child
+        ユーザーネーム  
+      .right__child
+        .edit__cog
+          = link_to "#" do 
+            %i.fas.fa-edit
+            = icon('fas', 'edit-square')
+          = link_to "#" do  
+            %i.fas.fa-cog
+            = icon('fas', 'cog-square')
+        
+ 
+  .groups
+    .group
+      .group__name
+        グループネーム
+      .group__message
+        新着メッセージ
+        .message
+          新着メッセージ
+
+
