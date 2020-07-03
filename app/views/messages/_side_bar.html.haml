@@ -5,7 +5,7 @@
         ユーザーネーム  
       .right__child
         .edit__cog
-          = link_to "#" do 
+          = link_to edit_user_path(current_user) do 
             %i.fas.fa-edit
             = icon('fas', 'edit-square')
           = link_to "#" do  
