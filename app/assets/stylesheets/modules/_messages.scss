@@ -48,31 +48,26 @@
   .groups{
     height:calc(100vh - 100px);
     width:300px;
-    display:flex;
-    justify-content: space-around;
+    // display:flex;
+    // justify-content: space-around;
     background: #2f3e51;
+    padding: 0 20px;
   }
     .group{
+      padding: 20px 0 40px 0;
       &__name{
         width: 260px;
         height: 20px;
-        margin: 20px;
+        //margin: 20px;
         background:#ffffff bold;
       }
       &__message{
         width: 260px;
         height: 5px;
-        margin: 20px;
+        //margin: 20px;
         background: #ffffff bold;
         font-size: 15px;
       }
-      &__message{
-        width: 260px;
-        height: 40px;
-        margin: 20px;
-        background:#ffffff bold ;
-        font-size: 11px;
-       }
     }
   .mainbar__header{
     background: #ffffff;
