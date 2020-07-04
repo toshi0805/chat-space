@@ -1,29 +1,31 @@
 .maingamen
   .mainbar__header
+  
     .aaa
       .mainbar__header__name
-        test
+        = @group.name
       .member
-        Member:masa
+        - @group.users.each do |user| 
+          = user.name   
     .mainbar__header__edit
-      = link_to edit_user_path(current_user) do
-        = "Edit"
+      = link_to "Edit",edit_group_path(@group)
   
-  .main
-    .box
-      .info    
-        .user__name
-          taro
-        .main__day
-          2019/11/20/(Wed) 17:43:01
-      .main__message
-        こんにちは
+  .MessageField
+    = render @messages
+    -# .box
+    -#   .info    
+    -#     .user__name
+    -#       taro
+    -#     .main__day
+    -#       2019/11/20/(Wed) 17:43:01
+    -#   .main__message
+    -#     こんにちは
 
   .mainbar__footer
-    = form_with html:{class: "Form"},local:true do |f|
+    = form_with model: [@group, @message],html:{class: "Form"},local:true do |f|
       .type__message
         = f.text_field :content, class: 'bb' ,placeholder:"type a message"
         = f.label :image ,class: "input-box__image" do
           = icon('fas', 'image',class: 'Form__icon')
           = f.file_field :image, class: 'Hidden'
-      = f.submit "Send" , class: "cc"
+      = f.submit "Send", class: "cc"
