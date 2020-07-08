@@ -2,35 +2,35 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html =
-        `<div class="MessageBox">
-          <div class="MessageInfo">
-            <div class="MessageInfo__userName">
+        `<div class="box" data-message-id=${message.id}>
+          <div class="info">
+            <div class="user__name">
               ${message.user_name}
             </div>
-            <div class="MessageInfo__date">
+            <div class="main__day">
               ${message.created_at}
             </div>
           </div>
-          <div class="Message">
+          <div class="main__message">
             <p class="Message__content">
               ${message.content}
             </p>
-            <img class="Message__image" src="${message.image}">
+            <img class="image" src="${message.image}">
           </div>
         </div>`
       return html;
     } else {
       let html =
-      `<div class="MessageBox">
-        <div class="MessageInfo">
-          <div class="MessageInfo__userName">
+      `<div class="box" data-message-id=${message.id}>
+        <div class="info">
+          <div class="user__name">
             ${message.user_name}
           </div>
-          <div class="MessageInfo__date">
+          <div class="main__day">.
             ${message.created_at}
           </div>
         </div>
-        <div class="Message">
+        <div class="main__message">
           <p class="Message__content">
             ${message.content}
           </p>
@@ -57,14 +57,14 @@ $(function(){
       $('.MessageField').append(html);      
       $('form')[0].reset();
       $('.MessageField').animate({ scrollTop: $('.MessageField')[0].scrollHeight});
-      $(".cc").prop("disabled", false);
+      $('.Form__submit').prop("disabled", false);
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
-  });
-
-    .always(function(data){
-      $(".cc").prop("disabled", false);
+    })
+    .always(function(){
+      $('.cc').prop("disabled", false);
     })
   });
 });
+
