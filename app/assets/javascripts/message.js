@@ -63,8 +63,8 @@ $(function(){
       alert("メッセージ送信に失敗しました");
   });
 
-    // .always(function(data){
-    //   $(".cc").prop("disabled", false);
-    // })
+    .always(function(data){
+      $(".cc").prop("disabled", false);
+    })
   });
 });
