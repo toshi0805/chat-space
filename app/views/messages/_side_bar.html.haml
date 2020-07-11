@@ -2,7 +2,7 @@
   .sidebar__header
     .header__name 
       .left__child
-        ユーザーネーム  
+        =current_user.name
       .right__child
         .edit__cog
           = link_to new_group_path do
